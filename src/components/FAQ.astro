@@ -1,0 +1,54 @@
+---
+// src/components/FAQ.astro
+
+const faqs = [
+  {
+    q: "Quali capi e prodotti posso conferire negli Smart Bin?",
+    a: "Puoi conferire abbigliamento dismesso, scarpe, accessori e tessili per la casa. Tramite l'app mobile potrai scansionare il capo e verificare la corretta destinazione d'uso."
+  },
+  {
+    q: "Come funzionano i premi e i voucher per i cittadini?",
+    a: "Ogni conferimento tracciato assegna token e punti all'interno dell'app, convertibili in sconti e voucher spendibili direttamente nei negozi e sugli store online dei brand partner."
+  },
+  {
+    q: "In che modo 4Loop aiuta i brand di moda con l'obbligo EPR?",
+    a: "Forniamo la tracciabilità certificata del fine vita del prodotto tramite registri digitali immutabili e reportistica analitica utile per bilanci di sostenibilità e compliance normativa."
+  },
+  {
+    q: "Come può un Comune o una PA aderire al progetto?",
+    a: "Attraverso l'installazione degli Smart Bin sul territorio comunale e l'accesso alla dashboard di governance urbana, che monitora in tempo reale volumi raccolti e riduzione di emissioni."
+  }
+];
+---
+
+<section id="faq" class="w-full max-w-6xl mx-auto px-6 py-20 sm:py-28">
+  <div class="max-w-2xl mb-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
+      <span class="w-2 h-2 rounded-full bg-[#1cb829]"></span>
+      <span class="text-[11px] font-bold tracking-widest text-[#111d27] uppercase">
+        DOMANDE FREQUENTI
+      </span>
+    </div>
+    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#111d27]">
+      Chiarezza su ogni aspetto
+    </h2>
+  </div>
+
+  <div class="space-y-4">
+    {faqs.map((faq) => (
+      <details class="group bg-white border border-slate-200/90 rounded-2xl p-6 transition-all duration-150 open:shadow-sm">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-base sm:text-lg text-[#111d27] list-none select-none">
+          <span>{faq.q}</span>
+          <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 group-open:rotate-180 transition-transform duration-200 shrink-0 ml-4">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 pt-4">
+          {faq.a}
+        </p>
+      </details>
+    ))}
+  </div>
+</section>

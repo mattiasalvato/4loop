@@ -1,0 +1,73 @@
+---
+// src/components/Team.astro
+
+const team = [
+  {
+    name: "Samuele Ciman",
+    role: "Co-founder & COO",
+    credential: "Polimi GSOM • Master in Sostenibilità & Impatto",
+    bio: "Esperto ESG in ambito industriale con focus sul coinvolgimento degli stakeholder aziendali e analisi LCA (Life Cycle Assessment). Guida le partnership strategiche e i protocolli di rendicontazione circolare.",
+    accent: "bg-[#1cb829]",
+    badgeBg: "bg-[#edf9ef] text-[#1cb829]"
+  },
+  {
+    name: "Nicolò Prando",
+    role: "Co-founder & CEO",
+    credential: "Ingegneria Civile & Ambientale • Architettura",
+    bio: "Consulente per standard internazionali di efficienza energetica e qualità delle strutture. Coordina lo sviluppo dell'infrastruttura territoriale e l'integrazione con i sistemi di governance urbana.",
+    accent: "bg-[#1d77f2]",
+    badgeBg: "bg-[#edf5ff] text-[#1d77f2]"
+  }
+];
+---
+
+<section class="w-full max-w-6xl mx-auto px-6 py-20 sm:py-28">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-slate-200/80 pb-8">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
+        <span class="w-2 h-2 rounded-full bg-[#1d77f2]"></span>
+        <span class="w-2 h-2 rounded-full bg-[#1cb829]"></span>
+        <span class="text-[11px] font-bold tracking-widest text-[#111d27] uppercase">
+          LEADERSHIP
+        </span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#111d27]">
+        Dietro la visione di 4Loop
+      </h2>
+    </div>
+    <p class="text-slate-500 text-sm max-w-sm leading-relaxed">
+      Ingegneria ambientale, analisi LCA e strategie ESG al servizio della transizione tessile.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {team.map((founder) => (
+      <div class="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/80 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-colors">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <span class={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${founder.badgeBg}`}>
+              {founder.role}
+            </span>
+          </div>
+
+          <h3 class="text-2xl font-black tracking-tight text-[#111d27] mb-1">
+            {founder.name}
+          </h3>
+
+          <p class="text-xs font-semibold text-slate-500 mb-6">
+            {founder.credential}
+          </p>
+
+          <p class="text-slate-600 text-sm leading-relaxed">
+            {founder.bio}
+          </p>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-slate-100 flex items-center gap-2">
+          <span class={`w-1.5 h-1.5 rounded-full ${founder.accent}`}></span>
+          <span class="text-xs font-medium text-slate-400">Co-founding Member</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

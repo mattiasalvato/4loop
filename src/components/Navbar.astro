@@ -1,0 +1,47 @@
+---
+// src/components/Navbar.astro
+---
+
+<header class="sticky top-0 z-50 w-full bg-[#f7fafc]/85 backdrop-blur-md border-b border-slate-200/60 transition-all">
+  <div class="w-full max-w-6xl mx-auto px-6 py-3.5 sm:py-4 flex items-center justify-between">
+    
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-2 select-none group">
+      <!-- Opzione Immagine da /public -->
+      <img 
+        src="/logo.png" 
+        alt="Logo 4Loop" 
+        class="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105"
+        loading="eager"
+      />
+      
+      <!-- In alternativa/in aggiunta: se vuoi mantenere il logo vettoriale in SVG diretto puro senza file esterno -->
+      <!--
+      <svg class="h-8 w-auto" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="36" font-family="system-ui, sans-serif" font-size="38" font-weight="900" fill="#111d27">4L</text>
+        <circle cx="82" cy="27" r="11" stroke="#1d77f2" stroke-width="7" fill="none" />
+        <circle cx="108" cy="27" r="11" stroke="#1cb829" stroke-width="7" fill="none" />
+        <text x="124" y="36" font-family="system-ui, sans-serif" font-size="38" font-weight="900" fill="#111d27">p</text>
+      </svg>
+      -->
+    </a>
+
+    <!-- Nav Links + CTA Funnel -->
+    <div class="flex items-center gap-6">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+        <a href="#processo" class="hover:text-[#111d27] transition-colors">Come funziona</a>
+        <a href="#ecosistema" class="hover:text-[#111d27] transition-colors">Ecosistema</a>
+        <a href="#impatto" class="hover:text-[#111d27] transition-colors">Impatto</a>
+        <a href="#faq" class="hover:text-[#111d27] transition-colors">FAQ</a>
+      </nav>
+
+      <a
+        href="#registrati"
+        class="px-6 py-2.5 rounded-full bg-[#1cb829] hover:bg-[#18a224] active:scale-95 text-white font-semibold text-sm transition-all shadow-sm shadow-[#1cb829]/20"
+      >
+        Entra in lista
+      </a>
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,91 @@
+---
+// src/components/FeatureBanner.astro
+---
+
+<section id="impatto" class="w-full max-w-6xl mx-auto px-6 py-20 sm:py-24">
+  <div class="relative w-full rounded-[2.5rem] bg-[#111d27] border border-slate-800 p-6 sm:p-12 overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10">
+    
+    <svg 
+      class="absolute -right-28 -top-32 sm:-right-16 sm:-top-24 w-[650px] sm:w-[900px] h-[750px] sm:h-[950px] pointer-events-none opacity-30 select-none" 
+      viewBox="0 0 600 900" 
+      fill="none" 
+      stroke-linecap="round"
+    >
+      <defs>
+        <linearGradient id="fpBrandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="45%" stop-color="#1d77f2" />
+          <stop offset="100%" stop-color="#1cb829" />
+        </linearGradient>
+      </defs>
+
+      <g stroke="url(#fpBrandGrad)">
+        <path d="M 300 450 m -12 0 a 12 28 0 1 0 24 0 a 12 28 0 1 0 -24 0" stroke-width="2.8" />
+        <path d="M 300 450 m -26 0 a 26 50 0 1 0 52 0 a 26 50 0 1 0 -52 0" stroke-width="2.8" />
+        <path d="M 300 450 m -40 0 a 40 72 0 1 0 80 0 a 40 72 0 1 0 -80 0" stroke-width="2.8" />
+        <path d="M 300 450 m -54 0 a 54 94 0 1 0 108 0 a 54 94 0 1 0 -108 0" stroke-width="2.8" />
+        <path d="M 230 450 C 230 330, 370 330, 370 450 C 370 570, 246 570, 246 450" stroke-width="2.6" />
+        <path d="M 216 450 C 216 305, 384 305, 384 450 C 384 595, 230 595, 230 450" stroke-width="2.6" />
+        <path d="M 202 450 C 202 280, 398 280, 398 450 C 398 620, 216 620, 216 450" stroke-width="2.6" />
+        <path d="M 188 450 C 188 255, 412 255, 412 450 C 412 645, 202 645, 202 450" stroke-width="2.5" />
+        <path d="M 174 450 C 174 230, 426 230, 426 450 C 426 670, 188 670, 188 450" stroke-width="2.5" />
+        <path d="M 160 450 C 160 205, 440 205, 440 450 C 440 695, 174 695, 174 450" stroke-width="2.4" />
+        <path d="M 146 450 C 146 180, 454 180, 454 450 C 454 720, 160 720, 160 450" stroke-width="2.4" />
+        <path d="M 132 450 C 132 155, 468 155, 468 450 C 468 745, 146 745, 146 450" stroke-width="2.3" />
+        <path d="M 118 450 C 118 130, 482 130, 482 450 C 482 770, 132 770, 132 450" stroke-width="2.2" />
+        <path d="M 104 450 C 104 105, 496 105, 496 450 C 496 795, 118 795, 118 450" stroke-width="2.2" />
+        <path d="M 90 450 C 90 80, 510 80, 510 450 C 510 820, 104 820, 104 450" stroke-width="2.1" />
+        <path d="M 76 450 C 76 55, 524 55, 524 450 C 524 845, 90 845, 90 450" stroke-width="2.0" />
+        <path d="M 62 450 C 62 30, 538 30, 538 450 C 538 870, 76 870, 76 450" stroke-width="2.0" />
+        <path d="M 48 450 C 48 5, 552 5, 552 450 C 552 895, 62 895, 62 450" stroke-width="1.9" />
+      </g>
+    </svg>
+
+    <div class="relative z-10 w-full md:w-1/2 bg-[#1cb829] text-white p-8 sm:p-12 rounded-[2rem] shadow-xl shadow-black/20 flex flex-col justify-between min-h-[380px]">
+      <div>
+        <span class="text-[11px] font-extrabold tracking-[0.18em] text-white/85 uppercase block mb-8">
+          RACCOLTA TESSILI POST-CONSUMO
+        </span>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.08] text-white">
+          Qui i tessili<br />
+          trovano una<br />
+          seconda vita.
+        </h2>
+      </div>
+
+      <div class="pt-8 flex items-center justify-between text-xs font-bold tracking-widest text-white uppercase select-none">
+        <span>4LOOP</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-white opacity-80"></span>
+        <span>ECONOMIA CIRCOLARE</span>
+      </div>
+    </div>
+
+    <div class="relative z-10 w-full md:w-1/2 flex flex-col items-start md:pl-2">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0b131b] border border-slate-700 mb-6">
+        <div class="flex items-center -space-x-1">
+          <span class="w-2 h-2 rounded-full bg-[#1d77f2]"></span>
+          <span class="w-2 h-2 rounded-full bg-[#1cb829]"></span>
+        </div>
+        <span class="text-xs font-bold tracking-wider text-slate-200 uppercase ml-1">
+          IMPATTO POSITIVO
+        </span>
+      </div>
+
+      <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        Ogni capo raccolto diventa una nuova risorsa per il pianeta.
+      </h3>
+
+      <p class="text-slate-300 text-sm sm:text-base font-normal leading-relaxed mb-8">
+        Conferisci i tuoi indumenti dismessi nei punti abilitati 4loop e segui l'intero ciclo di trasformazione attraverso il nostro sistema di tracciamento trasparente.
+      </p>
+
+      <a
+        href="#registrati"
+        class="px-8 py-4 rounded-full bg-[#1d77f2] hover:bg-[#1663cc] text-white font-semibold text-sm transition-all shadow-lg shadow-[#1d77f2]/25 active:scale-95"
+      >
+        Richiedi uno Smart Bin nel tuo comune
+      </a>
+    </div>
+
+  </div>
+</section>

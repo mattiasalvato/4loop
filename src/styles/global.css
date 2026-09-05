@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-loop-navy: #111d27;       /* Fondo scuro e card navy */
+  --color-loop-navy-dark: #0b131b;  /* Nero navy profondo per sezioni */
+  --color-loop-blue: #1d77f2;       /* Blu primario */
+  --color-loop-green: #1cb829;      /* Verde primario */
+  --color-loop-blue-soft: #edf5ff;  /* Badge sfondi chiari azzurri */
+  --color-loop-green-soft: #edf9ef; /* Badge sfondi chiari verdi */
+}
+
+@layer base {
+  body {
+    background-color: #f7fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+  }
+}

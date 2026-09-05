@@ -1,0 +1,131 @@
+---
+// src/components/LeadForm.astro
+---
+
+<section id="registrati" class="w-full max-w-6xl mx-auto px-6 pb-24 sm:pb-32">
+  <div class="w-full bg-[#111d27] text-white rounded-[2.5rem] p-8 sm:p-14 border border-slate-800 text-center flex flex-col items-center shadow-2xl relative overflow-hidden">
+    
+    <div class="absolute -top-24 -left-20 w-80 h-80 bg-[#1d77f2]/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-20 w-80 h-80 bg-[#1cb829]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#162738] border border-slate-700 mb-6 z-10 select-none">
+      <span class="w-2 h-2 rounded-full bg-[#1cb829] animate-pulse"></span>
+      <span class="text-xs font-bold tracking-wider text-slate-200 uppercase">
+        ACCESSO ANTICIPATO • POSTI LIMITATI
+      </span>
+    </div>
+
+    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 z-10">
+      Unisciti alla rivoluzione circolare
+    </h2>
+
+    <p class="text-slate-300 text-sm sm:text-base max-w-lg mx-auto leading-relaxed mb-8 z-10">
+      Entra in lista d'attesa: ricevi vantaggi esclusivi al lancio, accesso prioritario all'app e sconti dedicati con i nostri brand partner.
+    </p>
+
+    <form id="lead-capture-form" class="w-full max-w-md flex flex-col gap-4 z-10 text-left">
+      
+      <div class="grid grid-cols-3 gap-2 p-1 rounded-2xl bg-[#0b131b] border border-slate-800 text-center">
+        <label class="cursor-pointer">
+          <input type="radio" name="user_type" value="cittadino" checked class="peer sr-only" />
+          <span class="block py-2 text-xs font-semibold rounded-xl text-slate-400 peer-checked:bg-[#111d27] peer-checked:text-white peer-checked:shadow-sm transition-all">
+            Cittadino
+          </span>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="user_type" value="brand" class="peer sr-only" />
+          <span class="block py-2 text-xs font-semibold rounded-xl text-slate-400 peer-checked:bg-[#111d27] peer-checked:text-[#1d77f2] peer-checked:shadow-sm transition-all">
+            Brand Moda
+          </span>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="user_type" value="pa" class="peer sr-only" />
+          <span class="block py-2 text-xs font-semibold rounded-xl text-slate-400 peer-checked:bg-[#111d27] peer-checked:text-[#1cb829] peer-checked:shadow-sm transition-all">
+            Comune / PA
+          </span>
+        </label>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-2">
+        <input
+          type="email"
+          name="email"
+          id="lead-email-input"
+          required
+          placeholder="Inserisci la tua email personale..."
+          class="w-full px-5 py-3.5 rounded-full bg-white/10 border border-white/15 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#1cb829] transition-all"
+        />
+        <button
+          type="submit"
+          id="lead-submit-btn"
+          class="w-full sm:w-auto shrink-0 px-8 py-3.5 rounded-full bg-[#1cb829] hover:bg-[#18a224] text-white font-semibold text-sm transition-all duration-150 active:scale-95 shadow-lg shadow-[#1cb829]/25 cursor-pointer"
+        >
+          Blocca il posto
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between text-[11px] text-slate-400 px-2">
+        <span class="inline-flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-[#1cb829]" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          Zero spam garantito
+        </span>
+        <span>Dati protetti • GDPR compliant</span>
+      </div>
+    </form>
+
+    <div id="lead-success-msg" class="hidden flex-col items-center gap-2 z-10 py-6">
+      <div class="w-12 h-12 rounded-full bg-[#1cb829]/20 border border-[#1cb829] flex items-center justify-center text-[#1cb829] mb-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-white">Sei in lista prioritaria!</h3>
+      <p class="text-slate-300 text-sm max-w-sm">
+        Ti contatteremo in anteprima rispetto al lancio pubblico per attivare i tuoi vantaggi.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('lead-capture-form') as HTMLFormElement | null;
+const successMsg = document.getElementById('lead-success-msg');
+const submitBtn = document.getElementById('lead-submit-btn');
+
+if (form && successMsg && submitBtn) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.innerText = 'Invio in corso...';
+    submitBtn.setAttribute('disabled', 'true');
+
+    const formData = new FormData(form);
+    const payload = {
+      email: formData.get('email'),
+      user_type: formData.get('user_type'),
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      // Sostituisci con l'URL del tuo webhook (Make, n8n, Google Apps Script o Formspree)
+      const res = await fetch('https://hook.eu2.make.com/tuo-webhook-id', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) throw new Error('Errore nella richiesta');
+
+      form.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+      successMsg.classList.add('flex');
+    } catch (err) {
+      alert('Si è verificato un errore durante l\'iscrizione. Riprova tra poco.');
+      submitBtn.removeAttribute('disabled');
+      submitBtn.innerText = 'Blocca il posto';
+    }
+  });
+}
+</script>
