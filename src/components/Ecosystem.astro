@@ -2,42 +2,42 @@
 // src/components/Ecosystem.astro
 ---
 
-<section id="ecosistema" class="w-full max-w-6xl mx-auto px-6 py-20 sm:py-28">
-  <div class="text-center max-w-2xl mx-auto mb-16">
-    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
+<section id="ecosistema" class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-24">
+  <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 mb-3">
       <span class="w-2 h-2 rounded-full bg-[#1d77f2]"></span>
       <span class="w-2 h-2 rounded-full bg-[#1cb829]"></span>
-      <span class="text-xs font-black tracking-widest text-[#111d27] uppercase ml-1">
+      <span class="text-[10px] sm:text-xs font-black tracking-widest text-[#111d27] uppercase ml-1">
         PIATTAFORMA INTEGRATA
       </span>
     </div>
-    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111d27] mb-4">
+    <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#111d27] mb-3">
       Un ecosistema reale
     </h2>
-    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+    <p class="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed">
       Connettiamo attori privati, cittadini e istituzioni per una governance urbana circolare ed efficace.
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6">
 
-    <div class="md:col-span-8 bg-white border border-slate-200/90 rounded-[2.5rem] p-8 sm:p-12 flex flex-col justify-between shadow-sm min-h-[340px]">
+    <div class="md:col-span-8 bg-white border border-slate-200/90 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 flex flex-col justify-between shadow-sm min-h-[300px]">
       <div>
-        <span class="inline-block px-4 py-1.5 rounded-full bg-[#edf9ef] text-[#1cb829] text-xs font-bold tracking-wider uppercase mb-6">
+        <span class="inline-block px-3 py-1 rounded-full bg-[#edf9ef] text-[#1cb829] text-[10px] sm:text-xs font-bold tracking-wider uppercase mb-4 sm:mb-6">
           PER I CITTADINI (B2C)
         </span>
-        <h3 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold text-[#111d27] tracking-tight leading-[1.1] max-w-xl mb-4">
+        <h3 class="text-2xl sm:text-3xl lg:text-[2.2rem] font-bold text-[#111d27] tracking-tight leading-snug mb-3">
           Coinvolgimento, gamification e premi concreti.
         </h3>
-        <p class="text-slate-600 text-xs sm:text-sm max-w-lg leading-relaxed mb-8">
+        <p class="text-slate-600 text-xs sm:text-sm max-w-lg leading-relaxed mb-6">
           Incentiviamo il corretto conferimento tramite rewards spendibili presso i brand partner. Trova il contenitore più vicino e ricevi consigli per allungare la vita dei capi.
         </p>
       </div>
 
-      <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100">
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100">
         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Mappatura Bin</span>
-          <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Rewards</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-medium">Mappatura Bin</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-medium">Rewards</span>
         </div>
         <a href="#registrati" data-select="cittadino" class="text-xs font-bold text-[#1cb829] hover:underline">
           Accedi all'app B2C →
@@ -45,12 +45,12 @@
       </div>
     </div>
 
-    <div class="md:col-span-4 bg-[#111d27] text-white rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between shadow-lg min-h-[340px] border border-slate-800">
+    <div class="md:col-span-4 bg-[#111d27] text-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between shadow-lg min-h-[280px] border border-slate-800">
       <div>
-        <span class="inline-block px-4 py-1.5 rounded-full bg-[#162738] text-[#1d77f2] text-xs font-bold tracking-wider uppercase mb-8 border border-[#1d77f2]/20">
+        <span class="inline-block px-3 py-1 rounded-full bg-[#162738] text-[#1d77f2] text-[10px] sm:text-xs font-bold tracking-wider uppercase mb-5 border border-[#1d77f2]/20">
           PER I BRAND (B2B)
         </span>
-        <h3 class="text-2xl sm:text-3xl font-bold tracking-tight leading-tight mb-4">
+        <h3 class="text-xl sm:text-2xl font-bold tracking-tight leading-snug mb-3">
           Conformità EPR e insight preziosi.
         </h3>
         <p class="text-slate-300 text-xs leading-relaxed">
@@ -62,12 +62,12 @@
       </a>
     </div>
 
-    <div class="md:col-span-4 bg-[#0b131b] text-white rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between shadow-lg min-h-[360px] border border-slate-800">
+    <div class="md:col-span-4 bg-[#0b131b] text-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between shadow-lg min-h-[280px] border border-slate-800">
       <div>
-        <span class="inline-block px-4 py-1.5 rounded-full bg-[#102919] text-[#1cb829] text-xs font-bold tracking-wider uppercase mb-8 border border-[#1cb829]/20">
+        <span class="inline-block px-3 py-1 rounded-full bg-[#102919] text-[#1cb829] text-[10px] sm:text-xs font-bold tracking-wider uppercase mb-5 border border-[#1cb829]/20">
           PUBBLICA AMMINISTRAZIONE
         </span>
-        <h3 class="text-2xl sm:text-3xl font-bold tracking-tight leading-tight mb-4">
+        <h3 class="text-xl sm:text-2xl font-bold tracking-tight leading-snug mb-3">
           Governance urbana intelligente.
         </h3>
         <p class="text-slate-300 text-xs leading-relaxed">
@@ -79,29 +79,29 @@
       </a>
     </div>
 
-    <div class="md:col-span-4 bg-[#111d27] text-white rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between shadow-lg min-h-[360px] border border-slate-800">
+    <div class="md:col-span-4 bg-[#111d27] text-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between shadow-lg min-h-[280px] border border-slate-800">
       <div>
-        <span class="inline-block px-4 py-1.5 rounded-full bg-[#162738] text-[#1d77f2] text-xs font-bold tracking-wider uppercase mb-8 border border-[#1d77f2]/20">
+        <span class="inline-block px-3 py-1 rounded-full bg-[#162738] text-[#1d77f2] text-[10px] sm:text-xs font-bold tracking-wider uppercase mb-5 border border-[#1d77f2]/20">
           TECNOLOGIA PHYGITAL
         </span>
-        <h3 class="text-2xl sm:text-3xl font-bold tracking-tight leading-tight mb-4">
+        <h3 class="text-xl sm:text-2xl font-bold tracking-tight leading-snug mb-3">
           Smart Bin & Blockchain
         </h3>
         <p class="text-slate-300 text-xs leading-relaxed">
           Hardware intelligente sul territorio e registri immutabili: garanzia di trasparenza totale dal cassonetto al riciclo.
         </p>
       </div>
-      <div class="mt-6 text-[11px] text-slate-400 font-mono">
+      <div class="mt-6 text-[10px] sm:text-[11px] text-slate-400 font-mono">
         IoT Connected • Verified Data
       </div>
     </div>
 
-    <div class="md:col-span-4 bg-white border border-slate-200/90 text-[#111d27] rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between shadow-sm min-h-[360px]">
+    <div class="md:col-span-4 bg-white border border-slate-200/90 text-[#111d27] rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between shadow-sm min-h-[280px]">
       <div>
-        <span class="inline-block px-4 py-1.5 rounded-full bg-[#edf9ef] text-[#1cb829] text-xs font-bold tracking-wider uppercase mb-8">
+        <span class="inline-block px-3 py-1 rounded-full bg-[#edf9ef] text-[#1cb829] text-[10px] sm:text-xs font-bold tracking-wider uppercase mb-5">
           PER I RICICLATORI
         </span>
-        <h3 class="text-2xl sm:text-3xl font-bold tracking-tight leading-tight mb-4">
+        <h3 class="text-xl sm:text-2xl font-bold tracking-tight leading-snug mb-3">
           Frazione tessile selezionata.
         </h3>
         <p class="text-slate-600 text-xs leading-relaxed">

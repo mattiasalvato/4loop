@@ -34,69 +34,70 @@ const steps: Step[] = [
 ];
 ---
 
-<section id="processo" class="w-full bg-[#111d27] py-20 sm:py-28 overflow-hidden text-white">
-  <div class="w-full max-w-6xl mx-auto px-6">
+<section id="processo" class="w-full bg-[#111d27] py-16 sm:py-24 overflow-hidden text-white">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6">
     
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
       <div>
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-2.5 h-2.5 rounded-full bg-[#1d77f2]"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-[#1cb829]"></span>
-          <span class="text-xs font-bold tracking-widest text-slate-300 uppercase ml-1">
+        <div class="flex items-center gap-2 mb-2 sm:mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#1d77f2]"></span>
+          <span class="w-2 h-2 rounded-full bg-[#1cb829]"></span>
+          <span class="text-[10px] sm:text-xs font-bold tracking-widest text-slate-300 uppercase ml-1">
             WORKFLOW PHYGITAL
           </span>
         </div>
-        <h2 class="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-4">
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-2 sm:mb-4">
           Come funziona
         </h2>
-        <p class="text-slate-300 text-base sm:text-lg max-w-xl font-normal leading-snug">
-          Dallo Smart Bin al nuovo prodotto: un'infrastruttura integrata per garantire trasparenza, tracciabilità e valorizzazione dell'intera filiera tessile.
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl font-normal leading-relaxed">
+          Dallo Smart Bin al nuovo prodotto: un'infrastruttura integrata per garantire trasparenza, tracciabilità e valorizzazione dell'intera filiera.
         </p>
       </div>
 
-      <div class="hidden md:flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-3">
         <button
           id="btn-process-prev"
           aria-label="Precedente"
-          class="w-12 h-12 rounded-full bg-[#1d77f2] hover:bg-[#1663cc] active:scale-95 text-white flex items-center justify-center transition-all cursor-pointer shadow-lg shadow-[#1d77f2]/20"
+          class="w-11 h-11 rounded-full bg-[#1d77f2] hover:bg-[#1663cc] active:scale-95 text-white flex items-center justify-center transition-all cursor-pointer shadow-md shadow-[#1d77f2]/20"
         >
-          <svg class="w-6 h-6 stroke-[3] text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <svg class="w-5 h-5 stroke-[3] text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <button
           id="btn-process-next"
           aria-label="Successivo"
-          class="w-12 h-12 rounded-full bg-[#1cb829] hover:bg-[#18a224] active:scale-95 text-white flex items-center justify-center transition-all cursor-pointer shadow-lg shadow-[#1cb829]/20"
+          class="w-11 h-11 rounded-full bg-[#1cb829] hover:bg-[#18a224] active:scale-95 text-white flex items-center justify-center transition-all cursor-pointer shadow-md shadow-[#1cb829]/20"
         >
-          <svg class="w-6 h-6 stroke-[3] text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <svg class="w-5 h-5 stroke-[3] text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>
     </div>
 
+    <!-- Stack verticale pulito su mobile, slider snap su desktop -->
     <div
       id="process-slider"
-      class="flex flex-col md:flex-row gap-6 md:gap-8 md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory no-scrollbar pb-2"
+      class="flex flex-col md:flex-row gap-5 md:gap-6 md:overflow-x-auto md:scroll-smooth md:snap-x md:snap-mandatory no-scrollbar pb-2"
     >
       {steps.map((step) => (
-        <div class="md:snap-start flex-shrink-0 w-full md:w-[520px] lg:w-[560px] bg-[#0b131b] border border-slate-800/80 rounded-[2.5rem] p-7 sm:p-9 flex flex-col-reverse sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="md:snap-start flex-shrink-0 w-full md:w-[500px] lg:w-[540px] bg-[#0b131b] border border-slate-800/80 rounded-[2rem] p-6 sm:p-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-5 sm:gap-6 shadow-xl">
           
           <div class="flex-1 flex flex-col justify-center text-left w-full">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#111d27] border border-slate-700 text-[#1cb829] text-xs font-bold tracking-widest uppercase mb-3 w-fit">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#111d27] border border-slate-700 text-[#1cb829] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-2 sm:mb-3 w-fit">
               FASE {step.stepNum}
             </span>
-            <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-3">
+            <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
               {step.title}
             </h3>
-            <p class="text-slate-300 text-sm leading-relaxed font-light">
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
               {step.description}
             </p>
           </div>
 
-          <div class="w-full sm:w-44 h-44 sm:h-56 rounded-[1.8rem] overflow-hidden shrink-0 border border-slate-800">
-            <img src={step.image} alt={step.alt} class="w-full h-full object-cover" />
+          <div class="w-full sm:w-40 h-36 sm:h-48 rounded-2xl overflow-hidden shrink-0 border border-slate-800">
+            <img src={step.image} alt={step.alt} class="w-full h-full object-cover" loading="lazy" />
           </div>
 
         </div>
@@ -117,7 +118,7 @@ const steps: Step[] = [
   const next = document.getElementById('btn-process-next');
 
   if (slider && prev && next) {
-    prev.addEventListener('click', () => { slider.scrollBy({ left: -500, behavior: 'smooth' }); });
-    next.addEventListener('click', () => { slider.scrollBy({ left: 500, behavior: 'smooth' }); });
+    prev.addEventListener('click', () => { slider.scrollBy({ left: -450, behavior: 'smooth' }); });
+    next.addEventListener('click', () => { slider.scrollBy({ left: 450, behavior: 'smooth' }); });
   }
 </script>
