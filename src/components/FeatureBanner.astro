@@ -1,43 +1,34 @@
 ---
 // src/components/FeatureBanner.astro
+
+const locations = [
+  { 
+    name: "Lavanderia Lava_ti", 
+    city: "Caldiero (VR)",
+    mapsUrl: "https://maps.app.goo.gl/YgRkGLUoe5C2h7XQ7"
+  },
+  { 
+    name: "Lavanderia Lavanoeria", 
+    city: "Illasi (VR)",
+    mapsUrl: "https://maps.app.goo.gl/FVd7C3gkFLUuGuQM9"
+  },
+  { 
+    name: "Lavanderia L'oblo", 
+    city: "Soave (VR)",
+    mapsUrl: "https://maps.app.goo.gl/oe1J5gehmqBSnwwdA"
+  },
+  { 
+    name: "Lavanderia Magic Wash", 
+    city: "Montecchia di Crosara (VR)",
+    mapsUrl: "https://maps.app.goo.gl/mzV2ZkWCBUFy5nFaA"
+  }
+];
 ---
 
 <section id="impatto" class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-24">
   <div class="relative w-full rounded-[2rem] sm:rounded-[2.5rem] bg-[#111d27] border border-slate-800 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
     
-    <svg 
-      class="absolute -right-28 -top-32 sm:-right-16 sm:-top-24 w-[600px] sm:w-[900px] h-[700px] sm:h-[950px] pointer-events-none opacity-25 select-none" 
-      viewBox="0 0 600 900" 
-      fill="none" 
-      stroke-linecap="round"
-    >
-      <defs>
-        <linearGradient id="fpBrandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#ffffff" />
-          <stop offset="45%" stop-color="#1d77f2" />
-          <stop offset="100%" stop-color="#1cb829" />
-        </linearGradient>
-      </defs>
-
-      <g stroke="url(#fpBrandGrad)">
-        <path d="M 300 450 m -12 0 a 12 28 0 1 0 24 0 a 12 28 0 1 0 -24 0" stroke-width="2.8" />
-        <path d="M 300 450 m -26 0 a 26 50 0 1 0 52 0 a 26 50 0 1 0 -52 0" stroke-width="2.8" />
-        <path d="M 300 450 m -40 0 a 40 72 0 1 0 80 0 a 40 72 0 1 0 -80 0" stroke-width="2.8" />
-        <path d="M 300 450 m -54 0 a 54 94 0 1 0 108 0 a 54 94 0 1 0 -108 0" stroke-width="2.8" />
-        <path d="M 230 450 C 230 330, 370 330, 370 450 C 370 570, 246 570, 246 450" stroke-width="2.6" />
-        <path d="M 216 450 C 216 305, 384 305, 384 450 C 384 595, 230 595, 230 450" stroke-width="2.6" />
-        <path d="M 202 450 C 202 280, 398 280, 398 450 C 398 620, 216 620, 216 450" stroke-width="2.6" />
-        <path d="M 188 450 C 188 255, 412 255, 412 450 C 412 645, 202 645, 202 450" stroke-width="2.5" />
-        <path d="M 174 450 C 174 230, 426 230, 426 450 C 426 670, 188 670, 188 450" stroke-width="2.5" />
-        <path d="M 160 450 C 160 205, 440 205, 440 450 C 440 695, 174 695, 174 450" stroke-width="2.4" />
-        <path d="M 146 450 C 146 180, 454 180, 454 450 C 454 720, 160 720, 160 450" stroke-width="2.4" />
-        <path d="M 132 450 C 132 155, 468 155, 468 450 C 468 745, 146 745, 146 450" stroke-width="2.3" />
-        <path d="M 118 450 C 118 130, 482 130, 482 450 C 482 770, 132 770, 132 450" stroke-width="2.2" />
-        <path d="M 104 450 C 104 105, 496 105, 496 450 C 496 795, 118 795, 118 450" stroke-width="2.2" />
-        <path d="M 90 450 C 90 80, 510 80, 510 450 C 510 820, 104 820, 104 450" stroke-width="2.1" />
-      </g>
-    </svg>
-
+    <!-- Riquadro Verde Capi & Logo Originale -->
     <div class="relative z-10 w-full md:w-1/2 bg-[#1cb829] text-white p-6 sm:p-10 rounded-[1.8rem] sm:rounded-[2rem] shadow-xl flex flex-col justify-between min-h-[300px] sm:min-h-[360px]">
       <div>
         <span class="text-[10px] sm:text-[11px] font-extrabold tracking-[0.18em] text-white/85 uppercase block mb-6 sm:mb-8">
@@ -50,21 +41,30 @@
         </h2>
       </div>
 
-      <div class="pt-6 sm:pt-8 flex items-center justify-between text-[11px] sm:text-xs font-bold tracking-widest text-white uppercase select-none">
-        <span>4LOOP</span>
-        <span class="w-1.5 h-1.5 rounded-full bg-white opacity-80"></span>
-        <span>ECONOMIA CIRCOLARE</span>
+      <!-- Footer card con logo.png piccolo -->
+      <div class="pt-6 sm:pt-8 flex items-center justify-between border-t border-white/20 select-none">
+        <img 
+          src="/logo.png" 
+          alt="Logo 4Loop" 
+          class="h-5 sm:h-6 w-auto object-contain brightness-0 invert" 
+          loading="lazy"
+        />
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-white opacity-80"></span>
+          <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-white uppercase">ECONOMIA CIRCOLARE</span>
+        </div>
       </div>
     </div>
 
-    <div class="relative z-10 w-full md:w-1/2 flex flex-col items-start">
+    <!-- Colonna Testo & Azione -->
+    <div class="relative z-10 w-full md:w-1/2 flex flex-col items-center text-center">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0b131b] border border-slate-700 mb-4 sm:mb-6">
-        <div class="flex items-center -space-x-1">
+        <div class="flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#1d77f2]"></span>
           <span class="w-2 h-2 rounded-full bg-[#1cb829]"></span>
         </div>
-        <span class="text-[10px] sm:text-xs font-bold tracking-wider text-slate-200 uppercase ml-1">
-          IMPATTO POSITIVO
+        <span class="text-[10px] sm:text-xs font-bold tracking-wider text-slate-200 uppercase">
+          IMPATTO SUL TERRITORIO
         </span>
       </div>
 
@@ -72,17 +72,122 @@
         Ogni capo raccolto diventa una nuova risorsa per il pianeta.
       </h3>
 
-      <p class="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed mb-6 sm:mb-8">
-        Conferisci i tuoi indumenti dismessi nei punti abilitati 4loop e segui l'intero ciclo di trasformazione attraverso il nostro sistema di tracciamento trasparente.
+      <p class="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed mb-8 max-w-md">
+        Conferisci i tuoi indumenti dismessi nei punti abilitati 4Loop e segui l'intero ciclo di trasformazione attraverso il nostro sistema di tracciamento trasparente.
       </p>
 
-      <a
-        href="#registrati"
-        class="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full bg-[#1d77f2] hover:bg-[#1663cc] text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-[#1d77f2]/25 active:scale-95 text-center"
+      <button
+        id="btn-open-locations"
+        type="button"
+        class="px-8 py-4 rounded-full bg-[#1d77f2] hover:bg-[#1663cc] text-white font-semibold text-sm transition-all shadow-lg shadow-[#1d77f2]/25 active:scale-95 cursor-pointer"
       >
-        Richiedi uno Smart Bin nel tuo comune
-      </a>
+        Scopri dove trovarci
+      </button>
     </div>
 
   </div>
+
+  <!-- Pop-up / Modale Dove Trovarci con Link Google Maps -->
+  <div
+    id="locations-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="relative w-full max-w-lg bg-[#111d27] border border-slate-800 rounded-[2rem] p-6 sm:p-8 text-white shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+      
+      <!-- Intestazione modale -->
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="w-2 h-2 rounded-full bg-[#1cb829]"></span>
+            <span class="text-[10px] font-bold tracking-widest text-slate-300 uppercase">PUNTI DI RACCOLTA ATTIVI</span>
+          </div>
+          <h4 id="modal-title" class="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            Dove trovarci
+          </h4>
+        </div>
+
+        <button
+          id="btn-close-locations"
+          type="button"
+          aria-label="Chiudi finestra"
+          class="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Elenco card cliccabili collegate a Maps -->
+      <div class="space-y-3 mb-6">
+        {locations.map((loc) => (
+          <a
+            href={loc.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group p-4 rounded-xl bg-[#0b131b] border border-slate-800/90 hover:border-[#1d77f2]/50 hover:bg-[#0f1b26] transition-all flex items-center justify-between gap-4 cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#1cb829]/15 text-[#1cb829] group-hover:bg-[#1d77f2]/20 group-hover:text-[#1d77f2] flex items-center justify-center shrink-0 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div class="text-left">
+                <p class="text-sm font-bold text-white group-hover:text-slate-100">{loc.name}</p>
+                <p class="text-xs text-[#1d77f2] font-semibold flex items-center gap-1">
+                  <span>{loc.city}</span>
+                  <span class="text-[10px] text-slate-400 group-hover:text-[#1d77f2] transition-colors">↗ Maps</span>
+                </p>
+              </div>
+            </div>
+            <span class="text-[10px] uppercase font-bold text-slate-300 bg-slate-800/80 group-hover:bg-[#1cb829]/20 group-hover:text-[#1cb829] px-2.5 py-1 rounded-md transition-colors">
+              Apri mappa
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <p class="text-xs text-slate-400 text-center leading-relaxed">
+        Clicca su una sede per visualizzare il percorso su Google Maps.
+      </p>
+    </div>
+  </div>
 </section>
+
+<script>
+  const openBtn = document.getElementById('btn-open-locations');
+  const closeBtn = document.getElementById('btn-close-locations');
+  const modal = document.getElementById('locations-modal');
+
+  function openModal() {
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  openBtn?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+</script>

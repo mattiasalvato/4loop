@@ -11,7 +11,7 @@
     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#162738] border border-slate-700 mb-5 sm:mb-6 z-10 select-none">
       <span class="w-2 h-2 rounded-full bg-[#1cb829] animate-pulse"></span>
       <span class="text-[10px] sm:text-xs font-bold tracking-wider text-slate-200 uppercase">
-        ACCESSO ANTICIPATO • POSTI LIMITATI
+        PARTECIPA AL PROGETTO
       </span>
     </div>
 
@@ -19,51 +19,101 @@
       Unisciti alla rivoluzione circolare
     </h2>
 
-    <p class="text-slate-300 text-xs sm:text-sm md:text-base max-w-lg mx-auto leading-relaxed mb-6 sm:mb-8 z-10">
-      Entra in lista d'attesa: ricevi vantaggi esclusivi al lancio, accesso prioritario all'app e sconti dedicati con i nostri brand partner.
+    <p id="lead-description" class="text-slate-300 text-xs sm:text-sm md:text-base max-w-lg mx-auto leading-relaxed mb-6 sm:mb-8 z-10">
+      Entra nella community per scoprire i punti di conferimento attivi e sostenere il riciclo virtuoso dei tessili.
     </p>
 
-    <form id="lead-capture-form" class="w-full max-w-md flex flex-col gap-3.5 z-10 text-left">
-    
+    <form id="lead-capture-form" class="w-full max-w-lg flex flex-col gap-3.5 z-10 text-left">
+      
+      <!-- Selettore Profilo -->
+      <div class="grid grid-cols-3 gap-1.5 p-1 rounded-2xl bg-[#0b131b] border border-slate-800 text-center">
+        <label class="cursor-pointer">
+          <input type="radio" name="user_type" value="cittadino" checked class="peer sr-only" />
+          <span class="block py-2 text-[11px] sm:text-xs font-semibold rounded-xl text-slate-400 peer-checked:bg-[#111d27] peer-checked:text-white peer-checked:shadow-sm transition-all">
+            Cittadino
+          </span>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="user_type" value="lavanderia" class="peer sr-only" />
+          <span class="block py-2 text-[11px] sm:text-xs font-semibold rounded-xl text-slate-400 peer-checked:bg-[#111d27] peer-checked:text-[#1cb829] peer-checked:shadow-sm transition-all">
+            Lavanderia / Attività
+          </span>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="user_type" value="ente_brand" class="peer sr-only" />
+          <span class="block py-2 text-[11px] sm:text-xs font-semibold rounded-xl text-slate-400 peer-checked:bg-[#111d27] peer-checked:text-[#1d77f2] peer-checked:shadow-sm transition-all">
+            Comune / Brand
+          </span>
+        </label>
+      </div>
 
-      <div class="flex flex-col sm:flex-row items-center gap-2">
+      <!-- Campo Nome Referente o Attività (Compare solo per partner) -->
+      <div id="field-partner-name" class="hidden flex-col gap-1">
+        <label for="lead-org-name" class="text-xs text-slate-400 font-semibold px-2">Nome Attività / Ente</label>
+        <input
+          type="text"
+          name="org_name"
+          id="lead-org-name"
+          placeholder="Es: Lavanderia Lava_ti oppure Comune di..."
+          class="w-full px-4 sm:px-5 py-3 rounded-2xl bg-white/10 border border-white/15 text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1cb829] transition-all"
+        />
+      </div>
+
+      <!-- Campo Email -->
+      <div class="flex flex-col gap-1">
+        <label for="lead-email-input" class="text-xs text-slate-400 font-semibold px-2">Indirizzo Email</label>
         <input
           type="email"
           name="email"
           id="lead-email-input"
           required
-          placeholder="Inserisci la tua email personale..."
-          class="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-full bg-white/10 border border-white/15 text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1cb829] transition-all"
+          placeholder="nome@esempio.it"
+          class="w-full px-4 sm:px-5 py-3 rounded-2xl bg-white/10 border border-white/15 text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1cb829] transition-all"
         />
-        <button
-          type="submit"
-          id="lead-submit-btn"
-          class="w-full sm:w-auto shrink-0 px-7 py-3 sm:py-3.5 rounded-full bg-[#1cb829] hover:bg-[#18a224] text-white font-semibold text-xs sm:text-sm transition-all duration-150 active:scale-95 shadow-lg shadow-[#1cb829]/25 cursor-pointer text-center"
-        >
-          Blocca il posto
-        </button>
       </div>
 
-      <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 px-2">
+      <!-- Campo Messaggio (Compare solo per Lavanderie, Comuni e Brand) -->
+      <div id="field-partner-message" class="hidden flex-col gap-1">
+        <label for="lead-message" class="text-xs text-slate-400 font-semibold px-2">La tua richiesta</label>
+        <textarea
+          name="message"
+          id="lead-message"
+          rows="3"
+          placeholder="Vorrei richiedere un raccoglitore per la mia sede / vorremmo integrare il progetto..."
+          class="w-full px-4 sm:px-5 py-3 rounded-2xl bg-white/10 border border-white/15 text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1cb829] transition-all resize-none"
+        ></textarea>
+      </div>
+
+      <!-- Submit CTA -->
+      <button
+        type="submit"
+        id="lead-submit-btn"
+        class="w-full mt-2 px-7 py-3.5 rounded-full bg-[#1cb829] hover:bg-[#18a224] text-white font-semibold text-sm sm:text-base transition-all duration-150 active:scale-95 shadow-lg shadow-[#1cb829]/25 cursor-pointer text-center"
+      >
+        Entra nella community
+      </button>
+
+      <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 px-2 mt-1">
         <span class="inline-flex items-center gap-1">
-          <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#1cb829]" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-3 h-3 text-[#1cb829]" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
           </svg>
           Zero spam garantito
         </span>
-        <span>GDPR compliant</span>
+        <span>Dati trattati nel rispetto della privacy</span>
       </div>
     </form>
 
+    <!-- Messaggio di Successo -->
     <div id="lead-success-msg" class="hidden flex-col items-center gap-2 z-10 py-6">
       <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#1cb829]/20 border border-[#1cb829] flex items-center justify-center text-[#1cb829] mb-1">
         <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
         </svg>
       </div>
-      <h3 class="text-lg sm:text-xl font-bold text-white">Sei in lista prioritaria!</h3>
+      <h3 class="text-lg sm:text-xl font-bold text-white">Richiesta ricevuta!</h3>
       <p class="text-slate-300 text-xs sm:text-sm max-w-sm">
-        Ti contatteremo in anteprima rispetto al lancio pubblico per attivare i tuoi vantaggi.
+        Grazie per l'interesse verso 4Loop. Ti ricontatteremo al più presto.
       </p>
     </div>
 
@@ -74,23 +124,45 @@
   const form = document.getElementById('lead-capture-form') as HTMLFormElement | null;
   const successMsg = document.getElementById('lead-success-msg');
   const submitBtn = document.getElementById('lead-submit-btn');
-  const emailInput = document.getElementById('lead-email-input') as HTMLInputElement | null;
+  const desc = document.getElementById('lead-description');
+  const partnerNameField = document.getElementById('field-partner-name');
+  const partnerMsgField = document.getElementById('field-partner-message');
   const radios = document.querySelectorAll('input[name="user_type"]');
 
   radios.forEach((radio) => {
     radio.addEventListener('change', (e) => {
       const val = (e.target as HTMLInputElement).value;
-      if (!emailInput) return;
-      if (val === 'cittadino') emailInput.placeholder = "Inserisci la tua email personale...";
-      else if (val === 'brand') emailInput.placeholder = "nome@brand-fashion.com...";
-      else if (val === 'pa') emailInput.placeholder = "nome.cognome@comune.ente.it...";
+      if (!submitBtn || !desc || !partnerNameField || !partnerMsgField) return;
+
+      if (val === 'cittadino') {
+        partnerNameField.classList.add('hidden');
+        partnerNameField.classList.remove('flex');
+        partnerMsgField.classList.add('hidden');
+        partnerMsgField.classList.remove('flex');
+        submitBtn.innerText = 'Entra nella community';
+        desc.innerText = 'Entra nella community per scoprire i punti di conferimento attivi e sostenere il riciclo virtuoso dei tessili.';
+      } else if (val === 'lavanderia') {
+        partnerNameField.classList.remove('hidden');
+        partnerNameField.classList.add('flex');
+        partnerMsgField.classList.remove('hidden');
+        partnerMsgField.classList.add('flex');
+        submitBtn.innerText = 'Richiedi di ospitare un raccoglitore';
+        desc.innerText = 'Hai una lavanderia o un esercizio commerciale? Unisciti alla rete dei raccoglitori territoriali 4Loop.';
+      } else if (val === 'ente_brand') {
+        partnerNameField.classList.remove('hidden');
+        partnerNameField.classList.add('flex');
+        partnerMsgField.classList.remove('hidden');
+        partnerMsgField.classList.add('flex');
+        submitBtn.innerText = 'Richiedi informazioni di partnership';
+        desc.innerText = 'Collabora con 4Loop per la governance urbana dei rifiuti tessili o la conformità EPR del tuo brand.';
+      }
     });
   });
 
   if (form && successMsg && submitBtn) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      submitBtn.innerText = 'Invio...';
+      submitBtn.innerText = 'Invio richiesta...';
       submitBtn.setAttribute('disabled', 'true');
 
       try {
@@ -101,7 +173,7 @@
       } catch (err) {
         alert('Si è verificato un errore, riprova.');
         submitBtn.removeAttribute('disabled');
-        submitBtn.innerText = 'Blocca il posto';
+        submitBtn.innerText = 'Invia';
       }
     });
   }
