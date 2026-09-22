@@ -12,6 +12,7 @@ const {
 } = Astro.props;
 
 import CookieBanner from '../components/CookieBanner.astro';
+import Analytics from '@vercel/analytics/astro';
 ---
 
 <!doctype html>
@@ -30,5 +31,7 @@ import CookieBanner from '../components/CookieBanner.astro';
   <body class="min-h-screen flex flex-col selection:bg-emerald-200 selection:text-emerald-950">
     <slot />
     <CookieBanner />
+    <!-- Vercel Web Analytics -->
+    <Analytics />
   </body>
 </html>
