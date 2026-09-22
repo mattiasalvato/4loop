@@ -1,0 +1,63 @@
+---
+// src/pages/privacy-policy.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-slate-700">
+    <div class="mb-10">
+      <span class="text-xs font-bold text-[#1cb829] uppercase tracking-widest block mb-2">INFORMATIVA PRIVACY</span>
+      <h1 class="text-3xl sm:text-5xl font-black text-[#111d27] tracking-tight">Privacy Policy</h1>
+      <p class="text-sm text-slate-500 mt-2">Ultimo aggiornamento: Settembre 2026</p>
+    </div>
+
+    <div class="space-y-8 text-sm sm:text-base leading-relaxed">
+      <section>
+        <h2 class="text-xl font-bold text-[#111d27] mb-3">1. Titolare del Trattamento dei Dati</h2>
+        <p>
+          Il Titolare del trattamento dei dati raccolti tramite il sito web di <strong>4Loop</strong> è:<br />
+          <strong>Arch. Nicolò Prando</strong><br />
+          Piazza Martiri 7, 37035 San Giovanni Ilarione (VR) - Italia<br />
+          Email di contatto: <a href="mailto:info.studioprando@gmail.com" class="text-[#1d77f2] underline">info.studioprando@gmail.com</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111d27] mb-3">2. Tipologia di Dati Raccolti</h2>
+        <p class="mb-2">I dati personali trattati includono:</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-600">
+          <li><strong>Dati forniti volontariamente dall'utente:</strong> indirizzo email, nominativo o ragione sociale dell'attività/ente, e l'eventuale messaggio inserito tramite il modulo di contatto e lista d'attesa.</li>
+          <li><strong>Dati di navigazione e tecnici:</strong> indirizzi IP, orario della richiesta, parametri relativi al dispositivo e al browser utilizzato, raccolti in forma aggregata e anonima.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111d27] mb-3">3. Finalità e Base Giuridica del Trattamento</h2>
+        <p class="mb-2">I dati sono trattati per le seguenti finalità:</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-600">
+          <li>Rispondere alle richieste di adesione e partnership da parte di cittadini, lavanderie, brand o pubbliche amministrazioni.</li>
+          <li>Inviare comunicazioni di servizio sull'apertura di nuovi punti di raccolta territoriali e sul rilascio delle funzionalità dell'ecosistema 4Loop.</li>
+        </ul>
+        <p class="mt-2 text-xs text-slate-500">Base giuridica: consenso esplicito dell'interessato (art. 6, par. 1, lett. a, GDPR) ed esecuzione di misure precontrattuali.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111d27] mb-3">4. Modalità di Trattamento e Conservazione</h2>
+        <p>
+          Il trattamento viene svolto con strumenti informatici idonei a garantire sicurezza e riservatezza. I dati non saranno ceduti a terzi né diffusi. Verranno conservati per il tempo strettamente necessario a gestire le comunicazioni relative al progetto o fino a revoca del consenso.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111d27] mb-3">5. Diritti dell'Interessato</h2>
+        <p>
+          Ai sensi degli articoli 15-22 del Regolamento UE 2016/679 (GDPR), l'utente ha il diritto in qualunque momento di chiedere l'accesso, la rettifica, la cancellazione dei dati, la limitazione del trattamento o l'opposizione inviando una comunicazione a <a href="mailto:info.studioprando@gmail.com" class="text-[#1d77f2] underline">info.studioprando@gmail.com</a>.
+        </p>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

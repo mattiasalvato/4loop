@@ -3,9 +3,10 @@
 ---
 
 <header class="sticky top-0 z-50 w-full bg-[#f7fafc]/90 backdrop-blur-md border-b border-slate-200/70 transition-all">
-  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between">
     
-    <a href="#" class="flex items-center gap-2 select-none group">
+    <!-- Brand Logo -->
+    <a href="/" class="flex items-center gap-2 select-none group z-50 relative">
       <img 
         src="/logo.png" 
         alt="Logo 4Loop" 
@@ -14,21 +15,150 @@
       />
     </a>
 
-    <div class="flex items-center gap-3 sm:gap-6">
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
-        <a href="#processo" class="hover:text-[#111d27] transition-colors">Come funziona</a>
-        <a href="#ecosistema" class="hover:text-[#111d27] transition-colors">Ecosistema</a>
-        <a href="#impatto" class="hover:text-[#111d27] transition-colors">Impatto</a>
-        <a href="#faq" class="hover:text-[#111d27] transition-colors">FAQ</a>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-6">
+      <nav class="flex items-center gap-6 text-sm font-semibold text-slate-600">
+        <a href="/#processo" class="hover:text-[#111d27] transition-colors">Come funziona</a>
+        <a href="/#ecosistema" class="hover:text-[#111d27] transition-colors">Ecosistema</a>
+        <a href="/#impatto" class="hover:text-[#111d27] transition-colors">Impatto</a>
+        <a href="/#faq" class="hover:text-[#111d27] transition-colors">FAQ</a>
       </nav>
 
       <a
-        href="#registrati"
-        class="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-[#1cb829] hover:bg-[#18a224] active:scale-95 text-white font-semibold text-xs sm:text-sm transition-all shadow-sm shadow-[#1cb829]/20 shrink-0"
+        href="/#registrati"
+        class="px-5 py-2.5 rounded-full bg-[#1cb829] hover:bg-[#18a224] active:scale-95 text-white font-semibold text-xs sm:text-sm transition-all shadow-sm shadow-[#1cb829]/20"
       >
         Entra in lista
       </a>
     </div>
 
+    <!-- Mobile Menu Toggle Button (Hamburger / Close) -->
+    <button
+      id="mobile-menu-btn"
+      type="button"
+      aria-label="Apri menu di navigazione"
+      aria-expanded="false"
+      class="md:hidden relative z-50 w-10 h-10 rounded-full flex flex-col items-center justify-center gap-1.5 focus:outline-none"
+    >
+      <span class="bar-top w-5 h-0.5 bg-[#111d27] rounded-full transition-all duration-300 transform origin-center"></span>
+      <span class="bar-bottom w-5 h-0.5 bg-[#111d27] rounded-full transition-all duration-300 transform origin-center"></span>
+    </button>
+
   </div>
 </header>
+
+<!-- Mobile Full Screen Menu Overlay -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 bg-[#111d27] text-white flex flex-col justify-between p-8 pt-28 pb-12 transition-all duration-500 ease-in-out opacity-0 pointer-events-none translate-y-[-10px] md:hidden"
+  aria-hidden="true"
+>
+  <!-- Tracciati decorativi circolari in background -->
+  <div class="absolute -top-20 -right-20 w-80 h-80 bg-[#1d77f2]/15 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 -left-20 w-80 h-80 bg-[#1cb829]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- Link List Staggered -->
+  <nav class="flex flex-col gap-6 relative z-10">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="w-2 h-2 rounded-full bg-[#1d77f2]"></span>
+      <span class="w-2 h-2 rounded-full bg-[#1cb829]"></span>
+      <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase ml-1">NAVIGAZIONE</span>
+    </div>
+
+    <a href="/#processo" class="mobile-nav-link text-3xl font-extrabold tracking-tight hover:text-[#1cb829] transition-colors">
+      Come funziona
+    </a>
+    <a href="/#ecosistema" class="mobile-nav-link text-3xl font-extrabold tracking-tight hover:text-[#1d77f2] transition-colors">
+      Ecosistema
+    </a>
+    <a href="/#impatto" class="mobile-nav-link text-3xl font-extrabold tracking-tight hover:text-[#1cb829] transition-colors">
+      Impatto
+    </a>
+    <a href="/#faq" class="mobile-nav-link text-3xl font-extrabold tracking-tight hover:text-[#1d77f2] transition-colors">
+      FAQ
+    </a>
+  </nav>
+
+  <!-- CTA & Info Bottom -->
+  <div class="flex flex-col gap-5 relative z-10 pt-8 border-t border-slate-800">
+    <a
+      href="/#registrati"
+      class="mobile-nav-link w-full py-4 rounded-full bg-[#1cb829] active:scale-95 text-white font-bold text-center text-base shadow-lg shadow-[#1cb829]/25"
+    >
+      Entra nella community
+    </a>
+
+    <div class="flex items-center justify-between text-xs text-slate-400">
+      <span>info.studioprando@gmail.com</span>
+      <div class="flex gap-4">
+        <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy</a>
+        <a href="/cookie-policy" class="hover:text-white transition-colors">Cookie</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Animazione Hamburger in Croce */
+  #mobile-menu-btn.active .bar-top {
+    transform: translateY(4px) rotate(45deg);
+    background-color: #ffffff;
+  }
+  #mobile-menu-btn.active .bar-bottom {
+    transform: translateY(-4px) rotate(-45deg);
+    background-color: #ffffff;
+  }
+
+  /* Stato Open dell'Overlay */
+  #mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Animazione cascata dei link */
+  .mobile-nav-link {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.15s ease;
+  }
+
+  #mobile-menu.active .mobile-nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Ritardi progressivi per effetto stagger */
+  #mobile-menu.active .mobile-nav-link:nth-child(2) { transition-delay: 0.08s; }
+  #mobile-menu.active .mobile-nav-link:nth-child(3) { transition-delay: 0.14s; }
+  #mobile-menu.active .mobile-nav-link:nth-child(4) { transition-delay: 0.20s; }
+  #mobile-menu.active .mobile-nav-link:nth-child(5) { transition-delay: 0.26s; }
+  #mobile-menu.active a.w-full { transition-delay: 0.32s; }
+</style>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const links = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMenu() {
+    const isOpen = btn?.classList.toggle('active');
+    menu?.classList.toggle('active');
+    btn?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menu?.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    document.body.classList.toggle('overflow-hidden', isOpen);
+  }
+
+  btn?.addEventListener('click', toggleMenu);
+
+  // Chiude il menu al click su qualsiasi voce
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      btn?.classList.remove('active');
+      menu?.classList.remove('active');
+      btn?.setAttribute('aria-expanded', 'false');
+      menu?.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('overflow-hidden');
+    });
+  });
+</script>

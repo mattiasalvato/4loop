@@ -10,6 +10,8 @@ const {
   title = "loop.a — Dai nuova vita ai tuoi capi", 
   description = "Connettiamo consumatori, brand e riciclatori per una gestione trasparente." 
 } = Astro.props;
+
+import CookieBanner from '../components/CookieBanner.astro';
 ---
 
 <!doctype html>
@@ -27,5 +29,6 @@ const {
   </head>
   <body class="min-h-screen flex flex-col selection:bg-emerald-200 selection:text-emerald-950">
     <slot />
+    <CookieBanner />
   </body>
 </html>

@@ -1,0 +1,54 @@
+---
+// src/pages/cookie-policy.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-slate-700">
+    <div class="mb-10">
+      <span class="text-xs font-bold text-[#1d77f2] uppercase tracking-widest block mb-2">INFORMATIVA ESTESA</span>
+      <h1 class="text-3xl sm:text-5xl font-black text-[#111d27] tracking-tight">Cookie Policy</h1>
+      <p class="text-sm text-slate-500 mt-2">Ultimo aggiornamento: Settembre 2026</p>
+    </div>
+
+    <div class="space-y-8 text-sm sm:text-base leading-relaxed">
+      <section>
+        <h2 class="text-xl font-bold text-[#111d27] mb-3">1. Cosa sono i Cookie</h2>
+        <p>
+          I cookie sono piccoli file di testo che i siti visitati inviano al terminale dell'utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111d27] mb-3">2. Tipologie di Cookie Utilizzati da Questo Sito</h2>
+        
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200">
+            <h3 class="font-bold text-[#111d27] mb-1">Cookie Tecnici e Necessari</h3>
+            <p class="text-sm text-slate-600">
+              Essenziali per il corretto funzionamento del sito e per memorizzare le preferenze dell'utente (ad esempio il salvataggio del consenso all'uso dei cookie stessi). Non richiedono consenso preventivo.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-slate-200">
+            <h3 class="font-bold text-[#111d27] mb-1">Cookie di Terze Parti (Google Maps)</h3>
+            <p class="text-sm text-slate-600">
+              Il sito include collegamenti a Google Maps per facilitare la localizzazione dei punti di raccolta nelle lavanderie partner. L'interazione con collegamenti esterni può comportare il rilascio di cookie da parte di Google LLC.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-[#111d27] mb-3">3. Gestione delle Preferenze dei Cookie</h2>
+        <p>
+          L'utente può gestire le proprie preferenze relative ai cookie direttamente attraverso le impostazioni del proprio browser (Chrome, Safari, Firefox, Edge) impedendone l'installazione o eliminando i cookie già registrati.
+        </p>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

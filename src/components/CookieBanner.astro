@@ -1,0 +1,91 @@
+---
+// src/components/CookieBanner.astro
+---
+
+<!-- Widget Galleggiante Permanente (Trigger per riaprire le impostazioni) -->
+<button
+  id="cookie-widget-btn"
+  type="button"
+  aria-label="Gestisci preferenze cookie"
+  class="fixed bottom-4 left-4 z-40 hidden w-10 h-10 rounded-full bg-[#111d27] border border-slate-700/80 text-slate-300 hover:text-white hover:border-[#1cb829] shadow-lg shadow-black/25 flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+>
+  <svg class="w-5 h-5 text-[#1cb829]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+  </svg>
+</button>
+
+<!-- Banner / Modale Preferenze Cookie -->
+<div
+  id="cookie-banner"
+  class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 hidden bg-[#111d27] border border-slate-800 text-white rounded-3xl p-5 sm:p-6 shadow-2xl animate-in fade-in slide-in-from-bottom-5 duration-200"
+  role="region"
+  aria-label="Informativa Cookie"
+>
+  <div class="flex items-start gap-3 mb-3">
+    <div class="w-8 h-8 rounded-full bg-[#1cb829]/20 text-[#1cb829] flex items-center justify-center shrink-0">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+    </div>
+    <div>
+      <h4 class="text-sm font-bold text-white">Gestione Cookie</h4>
+      <p class="text-xs text-slate-300 leading-relaxed mt-1">
+        Utilizziamo cookie tecnici essenziali e integrazioni di terze parti (come Google Maps). Puoi aggiornare la tua scelta in qualsiasi momento. Consulta la nostra <a href="/cookie-policy" class="text-[#1d77f2] underline hover:text-white">Cookie Policy</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-end gap-2.5 pt-2 border-t border-slate-800/80">
+    <button
+      id="btn-reject-cookie"
+      type="button"
+      class="px-4 py-2 rounded-full border border-slate-700 hover:bg-slate-800 text-xs font-semibold text-slate-300 transition-colors cursor-pointer"
+    >
+      Solo necessari
+    </button>
+    <button
+      id="btn-accept-cookie"
+      type="button"
+      class="px-5 py-2 rounded-full bg-[#1cb829] hover:bg-[#18a224] text-xs font-semibold text-white transition-all active:scale-95 shadow-md shadow-[#1cb829]/20 cursor-pointer"
+    >
+      Accetta tutti
+    </button>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const widgetBtn = document.getElementById('cookie-widget-btn');
+  const acceptBtn = document.getElementById('btn-accept-cookie');
+  const rejectBtn = document.getElementById('btn-reject-cookie');
+  const CONSENT_KEY = '4loop_cookie_consent';
+
+  function initCookieState() {
+    const consent = localStorage.getItem(CONSENT_KEY);
+    if (!consent) {
+      banner?.classList.remove('hidden');
+      widgetBtn?.classList.add('hidden');
+    } else {
+      banner?.classList.add('hidden');
+      widgetBtn?.classList.remove('hidden');
+    }
+  }
+
+  function setConsent(choice: 'all' | 'necessary') {
+    localStorage.setItem(CONSENT_KEY, choice);
+    banner?.classList.add('hidden');
+    widgetBtn?.classList.remove('hidden');
+  }
+
+  function reopenBanner() {
+    widgetBtn?.classList.add('hidden');
+    banner?.classList.remove('hidden');
+  }
+
+  acceptBtn?.addEventListener('click', () => setConsent('all'));
+  rejectBtn?.addEventListener('click', () => setConsent('necessary'));
+  widgetBtn?.addEventListener('click', reopenBanner);
+
+  // Inizializza lo stato all'avvio
+  initCookieState();
+</script>
